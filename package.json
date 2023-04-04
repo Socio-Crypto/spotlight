@@ -1,0 +1,43 @@
+{
+  "name": "spotlight-app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "16.18.0",
+    "npm": "8.19.2"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@axelar-network/axelarjs-sdk": "^0.11.5",
+    "@rainbow-me/rainbowkit": "^0.7.1",
+    "@rarible/ethers-ethereum": "^0.12.103",
+    "@rarible/sdk": "^0.9.35",
+    "@rarible/web3-ethereum": "^0.12.103",
+    "@truffle/hdwallet-provider": "^2.1.0",
+    "antd": "^4.23.5",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.55.0",
+    "tslib": "^2.3.1",
+    "wagmi": "^0.6.8",
+    "web3": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.12",
+    "eslint": "8.25.0",
+    "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.8.4"
+  }
+}
