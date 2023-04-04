@@ -188,6 +188,7 @@ const SellNFT: NextPage = () => {
       ),
     });
 
+    
     console.log("sellResponse", sellResponse);
 
     const expirationTime: number = sellForm.getFieldValue("expirationTime");
