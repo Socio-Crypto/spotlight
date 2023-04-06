@@ -36,5 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 # ignore for heroku
-# yarn.lock
-# package-lock.json
+yarn.lock
+package-lock.json

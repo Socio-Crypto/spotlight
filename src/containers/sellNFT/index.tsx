@@ -5,10 +5,12 @@ import { useAccount, useBalance, useNetwork } from "wagmi";
 import { createRaribleSdk } from "@rarible/sdk";
 import { toItemId } from "@rarible/types";
 import { useRouter } from "next/router";
-import HDWalletProvider from "@truffle/hdwallet-provider";
+//import HDWalletProvider from "@truffle/hdwallet-provider";
+var HDWalletProvider = require("@truffle/hdwallet-provider");
 import { EthereumWallet } from "@rarible/sdk-wallet";
 import Web3 from "web3";
-import { Web3Ethereum } from "@rarible/web3-ethereum";
+//import { Web3Ethereum } from "@rarible/web3-ethereum";
+var Web3Ethereum = require("@rarible/web3-ethereum");
 // import { Contract, getDefaultProvider } from "ethers";
 // import { wallet } from "../../testforRunning/constants";
 import { EvmChain, GasToken } from "@axelar-network/axelarjs-sdk";
@@ -172,11 +174,12 @@ const SellNFT: NextPage = () => {
       ],
       chainId: 5,
     });
-    const web3 = new Web3(provider);
+    const web3 = new Web3(provider as any);
     const web3Ethereum = new Web3Ethereum({ web3 });
-    const ethWallet = new EthereumWallet(web3Ethereum);
+    const ethWallet = new EthereumWallet(web3Ethereum as any);
 
-    const sdk = await createRaribleSdk(ethWallet, "testnet");
+    //RaribleSdkEnvironment env = "goerli"; //"testnet";
+    const sdk = await createRaribleSdk(ethWallet, "staging");
 
     const blockchain: string = formData.blockchain;
 
@@ -188,7 +191,6 @@ const SellNFT: NextPage = () => {
       ),
     });
 
-    
     console.log("sellResponse", sellResponse);
 
     const expirationTime: number = sellForm.getFieldValue("expirationTime");
