@@ -1,0 +1,26 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "version": 2,
+  "functions": {
+    "compile": {
+      "runtime": "@vercel/node",
+      "memory": 1024,
+      "maxDuration": 5000,
+      "includeFiles": ["truffle-config.js", "contracts/**/*"],
+      "environment": {
+        "DISABLE_OPENCOLLECTIVE": "true"
+      },
+      "build": {
+        "env": {
+          "NODE_ENV": "production"
+        },
+        "cmd": "truffle compile --all"
+      }
+    }
+  }
+}
